@@ -5,21 +5,17 @@ import axios, { AxiosError }  from 'axios';
 import { useEffect, useState } from 'react';
 import {Error} from "./types/error"
 import {Item} from "./types/items"
-
+import {CsvImport} from "./components/atoms/CsvImport"
 function App() {
   
   const [error, setError] = useState<Error>();
   const [items, setItems] = useState<Array<Item>>([]);
-  type Props = {
-    target:{
-      value: string,
-    }
-  }
+
   type Props2 = React.MouseEvent<HTMLButtonElement, MouseEvent>
-  const Kirikae = (p:Props) =>{
-    console.log(p)
+  const Kirikae = (p:Props2) =>{
+    console.log(p.currentTarget.dataset.item)
     axios
-      .put(`http://localhost:1337/api/items/${p.target.value}`, {
+      .put(`http://localhost:1337/api/items/${p.currentTarget.dataset.item}`, {
         // id:p.target.value,
         // attributes:{
         //   status: false
@@ -37,7 +33,6 @@ function App() {
       .get('http://localhost:1337/api/items')
 
       .then(({ data }) => {
-        console.log(data.data)
         setItems(data.data);
       })
       .catch((error: AxiosError<{ error: string }>) => {
@@ -54,8 +49,9 @@ function App() {
     <div className="App">
       <header className="App-header">
       <ul>
-        {items.map(({ id, attributes }) => <li key={id}>{attributes.name}<button value={id} onClick={Kirikae}>boolean</button></li>)}
+        {items.map(({ id, attributes }) => <li key={id}>{attributes.name}<button data-item={id} onClick={Kirikae}>boolean</button></li>)}
       </ul>
+        <CsvImport />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
