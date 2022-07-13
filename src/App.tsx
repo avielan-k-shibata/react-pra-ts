@@ -48,6 +48,43 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <h1 className="text-3xl font-bold underline">
+      Hello world!
+    </h1>
+    <label htmlFor="my-modal-4" className="btn modal-button">
+        open modal
+      </label>
+
+      <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+      <label htmlFor="my-modal-4" className="cursor-pointer modal">
+        <label className="relative modal-box" htmlFor="">
+          <h3 className="text-lg font-bold">
+            Congratulations random Interner user!
+          </h3>
+          <p className="py-4">
+            Youve been selected for a chance to get one year of subscription to
+            use Wikipedia for free!
+          </p>
+        </label>
+      </label>
+
+      <div className="drawer">
+  <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+  <div className="drawer-content">
+
+    <label htmlFor="my-drawer" className="btn btn-primary drawer-button">Open drawer</label>
+  </div> 
+  <div className="drawer-side">
+    <label htmlFor="my-drawer" className="drawer-overlay"></label>
+    <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+
+      <li><a>Sidebar Item 1</a></li>
+      <li><a>Sidebar Item 2</a></li>
+      
+    </ul>
+  </div>
+</div>
+    <button className="btn w-64 rounded-full">Button</button>
       <ul>
         {items.map(({ id, attributes }) => <li key={id}>{attributes.name}<button data-item={id} onClick={Kirikae}>boolean</button></li>)}
       </ul>

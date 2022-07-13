@@ -29,6 +29,19 @@ export const CsvImport = () =>{
                 name: row.name,
                 category: row.category,
               }
+            }).catch(()=>{
+              axios.post(`http://localhost:1337/api/items`,{
+                data: {
+                  // status: row,
+                  id: row.id,
+                  name: row.name,
+                  category: row.category,
+                }
+              }).then(response => {
+                console.log(response);
+              }).catch((error)=>{
+                console.log(error)
+              });
             })
           }
         }}
