@@ -6,15 +6,15 @@ import { useEffect, useState } from "react";
 import { Error } from "./types/error";
 import { Item } from "./types/items";
 import { CsvImport } from "./components/atoms/CsvImport";
-
+import Home from './page/Home';
 const token =
   "b4e349da21812b3469514026d163b160f941845f86f7f5d2972f9c6757ba5f54800af30a7cc19883bce0eac97423be75266dda504f99e3422d8b0ae5d0865f994cad9cdc3c65d097a7fc2f5c7724ef6d0b8322f19fb90fdcccd16abdd79b0a2e5282adb663d2db8f2491d9603530726fb1eb06fcbd77df35c97b682e94e3a7bc";
 
-interface GEN<T> {
-  item :T;
-}
+// interface GEN<T> {
+//   item :T;
+// }
 
-const gen0: GEN<string> = {item: "hhe",}
+// const gen0: GEN<string> = {item: "hhe",}
 
 
 function App() {
