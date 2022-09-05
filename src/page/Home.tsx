@@ -1,5 +1,12 @@
+
+import { Link } from "react-router-dom";
+import { Layout } from "../components/template/Layout"
 function Home() {
-    return <h2>Home</h2>;
+    return (
+      <Layout>
+      <Link to="/test">test</Link>
+      </Layout>
+    )
   }
   
   export default Home;
