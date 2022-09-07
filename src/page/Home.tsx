@@ -4,7 +4,7 @@ import { Layout } from "../components/template/Layout"
 function Home() {
     return (
       <Layout>
-      <Link to="/test">test</Link>
+        <Link to="/test">test</Link>
       </Layout>
     )
   }
