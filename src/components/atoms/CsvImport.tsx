@@ -69,7 +69,6 @@ export const CsvImport = memo(() => {
     // encoding={...} // defaults to utf-8, see FileReader API
     >
       <ImporterField name="id" label="id" />
-
       <ImporterField name="name" label="Name" />
       <ImporterField name="category" label="category" />
     </Importer>
