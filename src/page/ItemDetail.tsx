@@ -1,14 +1,18 @@
 
 import { memo, useEffect, FC } from "react";
-// import { useParams } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Layout } from "../components/template/Layout"
-import { useAllItem } from "../hooks/useAllItems";
+import { useGetItem } from "../hooks/useGetItem";
 import {ItemTable} from "../components/molecules/ItemTable"
-export const ItemList: FC = memo(() => {
-  const { getItems, items, loading } = useAllItem();
-  useEffect(() => getItems(),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []);
+export const ItemDetail: FC = memo(() => {
+  let params = useParams();
+  const { getItem, item, loading } = useGetItem(params.pageId);
+  useEffect(() => getItem(),
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  []);
+
+  console.log(item)
   return (
     <>
       {loading ? (
@@ -22,14 +26,12 @@ export const ItemList: FC = memo(() => {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>名前</th>
+                <th>名前{params.pageId}</th>
                 <th></th>
               </tr>
             </thead>
             <tbody>
-              {items.map(({ id, attributes }) => (
-                <ItemTable id={id} key={id} name={attributes.name}/>
-              ))}
+
             </tbody>
           </table>
 

@@ -15,7 +15,6 @@ export const ItemTable = ({id, name} :Props) => {
     <tr>
         <th>{id}</th>
         <td>{name}</td>
-        <td>Quality Control Specialist</td>
         <td><Link to={link}>編集</Link></td>
     </tr>
     )
