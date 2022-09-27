@@ -8,8 +8,8 @@ export const List = () => {
       <Layout>
         <Link to="/test">test</Link>
         <div className="mockup-code">
-  <pre data-prefix="$"><code>npm i daisyui</code></pre>
-</div>
+          <pre data-prefix="$"><code>npm i daisyui</code></pre>
+        </div>
       </Layout>
     )
   }

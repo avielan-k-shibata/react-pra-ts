@@ -4,3 +4,11 @@ export type Item ={
         name: string,
     }
 }
+
+export type Items = {
+
+        id: number,
+        attributes: {
+            name: string,
+        }
+}
