@@ -12,7 +12,7 @@ export const ItemDetail: FC = memo(() => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   []);
 
-  console.log(item)
+  console.log(item, ItemTable)
   return (
     <>
       {loading ? (

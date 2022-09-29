@@ -23,6 +23,8 @@ export const useGetItem = (params:string| undefined)=>{
         .finally(() => {
           setLoading(false);
         });
-    }, []);
+    }, 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  []);
     return {getItem, item, loading}
 }
