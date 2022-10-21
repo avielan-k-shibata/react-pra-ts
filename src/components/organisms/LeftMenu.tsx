@@ -16,7 +16,7 @@ export const LeftMenu = () => {
                     <span>商品情報</span>
                 </li>
                 <li><Link to="/list">Item 1</Link></li>
-                <li><Link to="/list">Item 2</Link></li>
+                <li><Link to="/test">CSV 登録</Link></li>
                 </ul>
 
            </div>

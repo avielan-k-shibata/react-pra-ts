@@ -14,10 +14,14 @@ const token =
 
 
 export const Test = memo(() => {
+  const [count, setCount] =useState(999);
   const [error, setError] = useState<Error>();
   const [items, setItems] = useState<Array<Item>>([]);
   type Props2 = React.MouseEvent<HTMLButtonElement, MouseEvent>;
 
+  const CountClick = ()=>{
+    setCount(count + 1);
+  }
   const Kirikae = (p: Props2) => {
     console.log(p.currentTarget.dataset.item);
     axios.put(
@@ -59,6 +63,8 @@ export const Test = memo(() => {
 
   return (
     <Layout>
+
+      <p onClick={CountClick}>いいね！{count}</p>
       <ul>
         {items.map(({ id, attributes }) => (
           <li key={id}>

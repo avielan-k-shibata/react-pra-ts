@@ -9,6 +9,10 @@ export const ItemList: FC = memo(() => {
   useEffect(() => getItems(),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []);
+
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    console.log(event);
+  };
   return (
     <>
       {loading ? (
@@ -17,6 +21,7 @@ export const ItemList: FC = memo(() => {
         </Layout>
       ) : (
         <Layout>
+        <button onClick={handleClick}>Click</button>
           <table className="table w-full">
 
             <thead>
